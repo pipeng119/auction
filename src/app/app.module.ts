@@ -9,6 +9,9 @@ import { SearchComponent } from './search/search.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ProductComponent } from './product/product.component';
 import { StarsComponent } from './stars/stars.component';
+import { ProductDeatilComponent } from './product-deatil/product-deatil.component';
+import { HomeComponent } from './home/home.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({//只能声明组件、指令、管道
   // 这个模块有什么东西
@@ -20,6 +23,9 @@ import { StarsComponent } from './stars/stars.component';
     CarouselComponent,
     ProductComponent,
     StarsComponent,
+    ProductDeatilComponent,
+    HomeComponent,
+    TestComponent,
   ],
   // 依赖的其他模块
   imports: [

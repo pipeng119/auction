@@ -3,7 +3,13 @@
     <img [src]="imgUrl" alt="">
     <div class="caption">
       <h4 class="pull-right">{{product.price}}元</h4>
-      <p>{{product.desc}}</p>
+      <!-- <a [routerLink]="['/test']">跳转到test</a> -->
+      <h4>
+        <a [routerLink]="['/product',product.title]">{{product.title}}</a>
+      </h4>
+      <p>
+        {{product.desc}}
+      </p>
     </div>
     <div>
       <app-stars [rating]="product.rating"></app-stars>
