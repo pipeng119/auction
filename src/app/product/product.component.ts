@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs/operators'
 
 @Component({
   selector: 'app-product',
@@ -8,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class ProductComponent implements OnInit {
   private products: Array<Product>;
   private imgUrl: string = 'http://placehold.it/300x150';
-  constructor() { }
+  private keyword: string;
+  private titleFilter: FormControl = new FormControl();
+  constructor() { 
+    this.titleFilter.valueChanges
+      .pipe(debounceTime(500))
+      .subscribe(
+        value => this.keyword = value
+      )
+  }
 
   ngOnInit() {
     this.products = [
